@@ -43,11 +43,37 @@ sidebar_panel <- sidebarPanel(
 )
 
 # combine into a tab
-emissions_tab <- tabPanel(
-  "Let's See It",
+electric_range_tab <- tabPanel(
+  "Electric Range",
   sidebarLayout(
     main_panel_plot,
     sidebar_panel
+  )
+)
+
+# combine into a tab
+CAFV_info <- tabPanel(
+  "CAVF variation",
+  sidebarLayout(
+    main_panel_plot,
+    sidebar_panel
+  )
+)
+
+# combine into a tab
+geo_info <- tabPanel(
+  "Mapping",
+  sidebarLayout(
+    main_panel_plot,
+    sidebar_panel
+  )
+)
+
+# conclusion tab
+conclusion_tab <- tabPanel(
+  "Conclusion",
+  fluidPage(
+    "Hello",
   )
 )
 
@@ -56,6 +82,9 @@ ui <- navbarPage(
   theme = my_theme,
   "BEVs and PHEVs",
   intro_tab,
-  emissions_tab
+  electric_range_tab,
+  CAFV_info,
+  geo_info, 
+  conclusion_tab
 )
 
