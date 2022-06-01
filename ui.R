@@ -29,6 +29,20 @@ main_panel_plot <- mainPanel(
   "insert output plot here"
 )
 
+# electric range widget
+electric_range_panel <- sidebarPanel(
+  selectInput(
+    inputId = "make_choice",
+    label = "Make",
+    choices = unique(ev_data$Make)
+  )
+)
+
+# electric range plot
+electric_range_panel_plot <- mainPanel(
+  plotlyOutput("electric_range_plot")
+)
+
 # sidebar panel for installing the widget
 sidebar_panel <- sidebarPanel(
   # select an emissions type option
@@ -45,10 +59,10 @@ sidebar_panel <- sidebarPanel(
 
 # combine into a tab
 electric_range_tab <- tabPanel(
-  "Electric Range",
+  "Electric Vehicle Efficiency",
   sidebarLayout(
-    main_panel_plot,
-    sidebar_panel
+    electric_range_panel_plot,
+    electric_range_panel
   )
 )
 
