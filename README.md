@@ -1,7 +1,11 @@
-# Title of Your Final Project Here 
+# Tracking the Adoption of Electric Vehicles in Washington State
 ## INFO 201 "Foundational Skills for Data Science" — Spring 2022
 
-Authors: Your names here
+Authors: 
+* Esha Bantwal - ebantwal@uw.edu
+* Efra Ahsan - eahsan@uw.edu
+* Safa Jamal - safaj03@uw.edu
+* Lily Shen - lilyshen@uw.edu
 
 Link: Link to your Shiny App here
 
