@@ -3,7 +3,7 @@
 library("plotly")
 library("bslib")
 
-# load emissions data 
+# load data 
 ev_data <- read.csv("https://data.wa.gov/api/views/f6w7-q2d2/rows.csv?accessType=DOWNLOAD", stringsAsFactors = FALSE)
 
 # set a theme base
