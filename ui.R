@@ -13,7 +13,8 @@ my_theme <- bs_theme(bg = "#0b3d91", #background color
 ) 
 
 # update BootSwatch Theme
-my_theme <- bs_theme_update(my_theme, bootswatch = "solar")
+my_theme <- bs_theme_update(my_theme, bootswatch = "solar") %>% 
+  bs_add_rules(sass::sass_file("my_style.scss"))
 
 # home page tab
 intro_tab <- tabPanel(
@@ -25,7 +26,7 @@ intro_tab <- tabPanel(
 
 # plot on main page
 main_panel_plot <- mainPanel(
-  "insert output here"
+  "insert output plot here"
 )
 
 # sidebar panel for installing the widget
@@ -73,7 +74,7 @@ geo_info <- tabPanel(
 conclusion_tab <- tabPanel(
   "Conclusion",
   fluidPage(
-    "Hello",
+    includeMarkdown("conclusion.md"),
   )
 )
 
