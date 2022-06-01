@@ -7,7 +7,7 @@ library("bslib")
 ev_data <- read.csv("https://data.wa.gov/api/views/f6w7-q2d2/rows.csv?accessType=DOWNLOAD", stringsAsFactors = FALSE)
 
 # set a theme base
-my_theme <- bs_theme(bg = "#0b3d9s", #background color
+my_theme <- bs_theme(bg = "#0b3d91", #background color
                      fg = "white", #foreground color
                      primary = "#FCC780", # primary color
 ) 
@@ -54,7 +54,7 @@ emissions_tab <- tabPanel(
 # set up the navbar
 ui <- navbarPage(
   theme = my_theme,
-  "Global Emissions",
+  "BEVs and PHEVs",
   intro_tab,
   emissions_tab
 )
