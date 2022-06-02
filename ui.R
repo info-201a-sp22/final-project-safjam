@@ -26,6 +26,7 @@ intro_tab <- tabPanel(
   )
 )
 
+
 # cafv bar plot on main page
 main_panel_bar_plot <- mainPanel(
   plotlyOutput("cafv_chart")
