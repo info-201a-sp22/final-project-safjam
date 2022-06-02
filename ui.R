@@ -117,7 +117,7 @@ CAFV_info <- tabPanel(
 # combine into a tab
 top_vehicle_info <- tabPanel(
   "Vehicle Dominance",
-  h2("Dominating Vehicles in Top n Washington Counties"),
+  h2("Dominating Vehicles in Top Washington Counties"),
   sidebarLayout(
     popular_vehicles,
     popular_vehicles_panel

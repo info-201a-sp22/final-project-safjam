@@ -14,9 +14,7 @@ Lily Shen - lilyshen@uw.edu
 Safa Jamal - safaj03@uw.edu
 
 June 2nd, 2022
->>>>>>> 3d6736fd292e9f5ebf204a3c47fb355ffa08696a
-
-!["electric vehicles"](https://www.lifeder.com/wp-content/uploads/2020/11/coche-electrico-ilustracion-min.jpg)
+<img src="https://www.lifeder.com/wp-content/uploads/2020/11/coche-electrico-ilustracion-min.jpg" alt="Paris" class="center">
 
 
 ## Questions
@@ -27,7 +25,7 @@ The role of vehicles and fuel emissions in climate change has been gaining incre
 
 * **How does the amount of electric vehicles with CAFV vary based on the city?**
 
-* **HWhat are the dominating vehicle models throughout Washington state?**
+* **What are the dominating vehicle models throughout Washington state?**
 
 We ask such questions because as technology advances and engineers develop more electric vehicles to reduce the amount of carbon dioxide emissions, it’s important to remember that these vehicles still require lots of other energy to function, if not gasoline. Thus, with this project, we will be identifying and collecting data to demonstrate whether electric vehicles are a benefit or harm to the state of Washington.
 
