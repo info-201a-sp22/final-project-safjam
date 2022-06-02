@@ -41,7 +41,7 @@ popular_vehicles_panel <- sidebarPanel(
               label = "Top Counties in Order of Vehicle Density", 
               min = 1, 
               max = 163, 
-              value = c(1, 10)),
+              value = 50),
   # select vehicle type
   checkboxGroupInput(inputId = "vehicle_type_checkbox",
                label = "Vehicle Type",
