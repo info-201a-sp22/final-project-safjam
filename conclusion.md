@@ -1,4 +1,7 @@
-# Conclusion
+* **
+###### Note: Clean Alternative Fuel Vehicles (CAFVs) based on the fuel requirement and electric-only range requirement in House Bill 2042 as passed in the 2019 legislative session.
+* **
+## Conclusion
 
 The aim of the analysis was to answer three main questions:
 

@@ -94,7 +94,7 @@ electric_range_tab <- tabPanel(
 
 # combine into a tab
 CAFV_info <- tabPanel(
-  "CAVF variation",
+  "Clean Fuel Eligibility",
   sidebarLayout(
     main_panel_bar_plot,
     sidebar_panel_bar_plot

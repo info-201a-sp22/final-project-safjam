@@ -1,6 +1,5 @@
-<p align="center">
-  <font size="+2">Tracking the Adoption of Electric Vehicles in Washington State</font>
-</p>
+<h1 style="color:#70C87D;"
+align = "center">Tracking the Adoption of Electric Vehicles in Washington State</h1>
 
 
 <p align="center">

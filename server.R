@@ -7,9 +7,12 @@ library(bslib)
 library(markdown)
 library(tidyverse)
 library(RColorBrewer)
+library(thematic)
 
 # load data
 ev_data <- read.csv("https://data.wa.gov/api/views/f6w7-q2d2/rows.csv", stringsAsFactors = FALSE)
+
+thematic_shiny(font = "auto")
 
 # expand ggplot color palette capacity: credit to (https://www.r-bloggers.com/2013/09/how-to-expand-color-palette-with-ggplot-and-rcolorbrewer/)
 colourCount = length(unique(mtcars$hp))
