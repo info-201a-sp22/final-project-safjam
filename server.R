@@ -16,12 +16,15 @@ server <- function(input, output) {
   output$electric_range_plot <- renderPlotly({
     
     er_filtered <- ev_data %>%
-      filter(Make %in% input$make_selection,
-             Model.Year >= input$year_input[1],
-             Model.Year <= input$year_input[2])
+      filter(Make %in% input$make_selection)
     
     ev_plot <- ggplot(data = er_filtered, aes(color = Make)) +
-      geom_point(mapping = aes(group = 1, x = Model.Year, y = Electric.Range))
+      geom_point(mapping = aes(group = 1, 
+                               x = Model.Year, 
+                               y = Electric.Range)) + 
+      labs(x = "Model Year",
+           y = "Electric Range") +
+      ggtitle(paste("Electric Ranges of Makes Throughout Model Years"))
     
     return(ggplotly(ev_plot))
   })
