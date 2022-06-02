@@ -17,6 +17,37 @@ getPalette = colorRampPalette(brewer.pal(9, "Set1"))
 
 server <- function(input, output) { 
   
+  # cafv bar chart
+  output$cafv_chart <- renderPlotly({
+    # create bar chart
+    
+    # top 10 cities with the most vehicles
+    top_10_cities <- ev_data %>%
+      group_by(City) %>% 
+      summarize(total_vehicles = n()) %>% 
+      slice_max(n = 10, order_by = total_vehicles)
+    
+    # join tables to get all vehicles from top 10 cities
+    cities_and_cafv <- left_join(top_10_cities, ev_data, by = "City")
+    
+    sum_groups <- cities_and_cafv %>% 
+      group_by(Clean.Alternative.Fuel.Vehicle..CAFV..Eligibility, City) %>% 
+      summarize(summed_vehicles = n())
+    
+    # create bar plot
+    cafv_bar_chart <- ggplot(data = cities_and_cafv) +
+      geom_col(mapping = aes(x = City, y = total_vehicles,
+                            fill = Clean.Alternative.Fuel.Vehicle..CAFV..Eligibility), 
+                            position = "fill",
+                            label = paste("City:", City,
+                                         "Total Vehicles:", sum_groups$summed_vehicles)) +
+      scale_x_discrete(guide = guide_axis(n.dodge=3)) +
+      labs(title = 'Percentage of Vehicles That Are Either Eligible for Clean Alternative Fuels or Not in 10 Washington Cities', x = "Cities", y = 'Percent of Vehicles')
+    
+    return(ggplotly(cafv_bar_chart, tooltip = c("label")))
+    
+  })
+  
   # electric range plot
   output$electric_range_plot <- renderPlotly({
     

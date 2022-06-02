@@ -26,9 +26,9 @@ intro_tab <- tabPanel(
   )
 )
 
-# plot on main page
-main_panel_plot <- mainPanel(
-  "insert output plot here"
+# cafv bar plot on main page
+main_panel_bar_plot <- mainPanel(
+  plotlyOutput("cafv_chart")
 )
 
 # vehicle popularity 
@@ -100,7 +100,7 @@ electric_range_tab <- tabPanel(
 CAFV_info <- tabPanel(
   "CAVF variation",
   sidebarLayout(
-    main_panel_plot,
+    main_panel_bar_plot,
     sidebar_panel
   )
 )
