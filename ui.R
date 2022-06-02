@@ -11,6 +11,8 @@ ev_data <- read.csv("https://data.wa.gov/api/views/f6w7-q2d2/rows.csv?accessType
 my_theme <- bs_theme(bg = "#F58686",
                      fg = "white", 
                      primary = "#F58686",
+                     base_font = font_google("Roboto"),
+                     code_font = font_google("JetBrains Mono")
 ) 
 
 # update BootSwatch Theme
@@ -83,14 +85,16 @@ sidebar_panel <- sidebarPanel(
 
 # combine into a tab
 electric_range_tab <- tabPanel(
-  "Electric Vehicle Efficiency",
+  "Efficiency of Makes",
   sidebarLayout(
     electric_range_panel,
     er_main_panel_plot,
   ),
+  br(),
   p("This dot plot maps out",
-    span("electric range (how far a vehicle can travel purely on electric charge)", style = "color:blue"),
-    "of electric vehicles from 1993-2022, organized by different makes to observe efficiency!")
+    span("electric range (amount of miles a vehicle can travel purely on electric charge)", style = "color:green"),
+    "of electric vehicles from 1993-2022, organized by different makes to observe efficiency!"),
+  p("The scatterplot is also organized by vehicle models, allowing observations of specific models by makers.")
 )
 
 # combine into a tab
@@ -123,10 +127,11 @@ conclusion_tab <- tabPanel(
   )
 )
 
+
 # set up the navbar
 ui <- navbarPage(
   theme = my_theme,
-  "BEVs and PHEVs",
+  "Electric Vehicles in WA",
   intro_tab,
   electric_range_tab,
   CAFV_info,

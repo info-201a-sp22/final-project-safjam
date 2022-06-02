@@ -21,15 +21,18 @@ server <- function(input, output) {
   output$electric_range_plot <- renderPlotly({
     
     er_filtered <- ev_data %>%
-      filter(Make %in% input$make_selection)
+      filter(Make %in% input$make_selection) %>%
+      group_by(Model.Year) %>%
+      filter(Electric.Range == max(Electric.Range)) %>%
+      mutate(Vehicle = paste(Make, Model))
     
-    ev_plot <- ggplot(data = er_filtered, aes(color = Make)) +
+    ev_plot <- ggplot(data = er_filtered, aes(color = Vehicle)) +
       geom_point(mapping = aes(group = 1, 
                                x = Model.Year, 
                                y = Electric.Range)) + 
-      labs(x = "Model Year",
+      labs(x = "Model Year of Vehicle",
            y = "Electric Range") +
-      ggtitle(paste("Electric Ranges of Makes Throughout Model Years"))
+      ggtitle(paste("Electric Ranges of Vehicles Throughout The Years"))
     
     return(ggplotly(ev_plot))
   })
