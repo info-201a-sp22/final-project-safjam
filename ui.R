@@ -2,7 +2,7 @@
 
 library("plotly")
 library("bslib")
-thematic_shiny(font = "auto")
+# thematic_shiny(font = "auto")
 
 # load data 
 ev_data <- read.csv("https://data.wa.gov/api/views/f6w7-q2d2/rows.csv?accessType=DOWNLOAD", stringsAsFactors = FALSE)
@@ -42,7 +42,7 @@ popular_vehicles_panel <- sidebarPanel(
               label = "Top Counties in Order of Vehicle Density", 
               min = 1, 
               max = 163, 
-              value = 50),
+              value = 10),
   # select vehicle type
   checkboxGroupInput(inputId = "vehicle_type_checkbox",
                label = "Vehicle Type",
@@ -103,7 +103,7 @@ CAFV_info <- tabPanel(
 )
 
 # combine into a tab
-geo_info <- tabPanel(
+top_vehicle_info <- tabPanel(
   "Vehicle Dominance",
   sidebarLayout(
     popular_vehicles,
@@ -126,7 +126,7 @@ ui <- navbarPage(
   intro_tab,
   electric_range_tab,
   CAFV_info,
-  geo_info, 
+  top_vehicle_info, 
   conclusion_tab
 )
 

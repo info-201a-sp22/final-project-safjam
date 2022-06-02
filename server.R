@@ -54,10 +54,13 @@ server <- function(input, output) {
       mutate(Count) %>% 
       arrange(-Count)
     
-    # selected_counties <- input$county_popularity_slider ---------
-    n <- head(county_ev_density, 50)
-    dominance_pie_chart <- ggplot(n, aes(x = '', y = Count, fill = Vehicle)) +
-      geom_bar() + 
+    widgeted_data <- head(county_ev_density, input$county_popularity_slider) %>% 
+      select(Vehicle, Count)
+    
+    dominance_pie_chart <- ggplot(widgeted_data, aes(x = factor(1), y = Count, fill = Vehicle)) + 
+      geom_bar(stat = 'identity', width = 1) +
       coord_polar(theta = "y")
+    
+    return(dominance_pie_chart)
   })
 }
