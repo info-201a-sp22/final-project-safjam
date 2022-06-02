@@ -11,6 +11,8 @@ ev_data <- read.csv("https://data.wa.gov/api/views/f6w7-q2d2/rows.csv?accessType
 my_theme <- bs_theme(bg = "#F58686",
                      fg = "white", 
                      primary = "#F58686",
+                     base_font = font_google("Roboto"),
+                     code_font = font_google("JetBrains Mono")
 ) 
 
 # update BootSwatch Theme
@@ -20,6 +22,7 @@ my_theme <- bs_theme_update(my_theme, bootswatch = "flatly") %>%
 # home page tab
 intro_tab <- tabPanel(
   "Introduction",
+  #img(src = "https://cdn-icons-png.flaticon.com/512/4564/4564602.png", width = 250, align = "right"),
   fluidPage(
     includeMarkdown("index.md"),
   )
@@ -118,6 +121,7 @@ conclusion_tab <- tabPanel(
     includeMarkdown("conclusion.md"),
   )
 )
+
 
 # set up the navbar
 ui <- navbarPage(
