@@ -29,6 +29,26 @@ main_panel_plot <- mainPanel(
   "insert output plot here"
 )
 
+# vehicle popularity 
+popular_vehicles <- mainPanel(
+  plotlyOutput(outputId = "popular_vehicles_plot")
+)
+
+# vehicle popularity widgets
+popular_vehicles_panel <- sidebarPanel(
+  # select cities
+  sliderInput(inputId = "county_popularity_slider", 
+              label = "Top Counties in Order of Vehicle Density", 
+              min = 1, 
+              max = 163, 
+              value = c(1, 10)),
+  # select vehicle type
+  checkboxGroupInput(inputId = "vehicle_type_checkbox",
+               label = "Vehicle Type",
+               choices = list("Battery Electric Vehicles" = 1, "Plug-in Hybrid Electric Vehicles" = 2), 
+               selected = c(1, 2))
+)
+
 # electric range widget
 electric_range_panel <- sidebarPanel(
   # select the make type option
@@ -83,10 +103,10 @@ CAFV_info <- tabPanel(
 
 # combine into a tab
 geo_info <- tabPanel(
-  "Mapping",
+  "Vehicle Dominance",
   sidebarLayout(
-    main_panel_plot,
-    sidebar_panel
+    popular_vehicles,
+    popular_vehicles_panel
   )
 )
 
