@@ -1,9 +1,9 @@
-## Electric Vehicles in WA
+## Super cool header
 
 ### Contributors
 Lily Shen, lilyshen@uw.edu
 
 ### Date
 
-!["electric vehicles"](https://pbs.twimg.com/media/E-2iEjiWUAAThGN?format=jpg&name=4096x4096)
+!["electric vehicles"](https://www.lifeder.com/wp-content/uploads/2020/11/coche-electrico-ilustracion-min.jpg)
 

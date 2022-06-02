@@ -22,7 +22,6 @@ my_theme <- bs_theme_update(my_theme, bootswatch = "flatly") %>%
 # home page tab
 intro_tab <- tabPanel(
   "Introduction",
-  #img(src = "https://cdn-icons-png.flaticon.com/512/4564/4564602.png", width = 250, align = "right"),
   fluidPage(
     includeMarkdown("index.md"),
   )
@@ -126,7 +125,7 @@ conclusion_tab <- tabPanel(
 # set up the navbar
 ui <- navbarPage(
   theme = my_theme,
-  "BEVs and PHEVs",
+  "Electric Vehicles in WA",
   intro_tab,
   electric_range_tab,
   CAFV_info,
