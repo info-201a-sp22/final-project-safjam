@@ -1,1 +1,0 @@
-This dot plot maps out electric range (how far a vehicle can travel purely on electric charge) of electric vehicles from 1993-2022, organized by different makes. This is extremely helpful to understand the trend of efficiency among electric vehicle makers and models based on model year. 
