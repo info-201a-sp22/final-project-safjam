@@ -111,7 +111,17 @@ CAFV_info <- tabPanel(
   sidebarLayout(
     main_panel_bar_plot,
     sidebar_panel_bar_plot
-  )
+  ),
+  br(),
+  p("The chart represents the proportion of vehicles in each city that are
+    eligible for clean alternative fuel energy. We chose this chart because we
+    believe it’s important to recognize how many cities have vehicles that have
+    clean alternative fuel. Clean alternative fuels are any source of fuel that
+    is not gasoline or diesel. This means that clean alternative fuel vehicles
+    (CAFV) are less likely to contribute towards air pollution with carbon dioxide.
+    So, by creating this chart, we’re able to show how many cities have people
+    who use CAFV eligible vehicles which then shows us how many cities are less
+    prone to air pollution.")
 )
 
 # combine into a tab

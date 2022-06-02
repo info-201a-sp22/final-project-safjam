@@ -1,12 +1,6 @@
 ## Tracking the Adoption of Electric Vehicles in Washington State
 
-### Contributors
-<<<<<<< HEAD
-* Lily Shen - _lilyshen@uw.edu_
-* Efra Ahsan - _eahsan@uw.edu_
-
 ### 06/02/2022
-=======
 
 Esha Bantwal - ebantwal@uw.edu   
 Efra Ahsan - eahsan@uw.edu  
@@ -14,7 +8,6 @@ Lily Shen - lilyshen@uw.edu
 Safa Jamal - safaj03@uw.edu
 
 June 2nd, 2022
->>>>>>> 3d6736fd292e9f5ebf204a3c47fb355ffa08696a
 
 !["electric vehicles"](https://www.lifeder.com/wp-content/uploads/2020/11/coche-electrico-ilustracion-min.jpg)
 
@@ -35,7 +28,7 @@ We ask such questions because as technology advances and engineers develop more 
 
 ## The Dataset
 
-In order to answer these questions, we will be using data about electric vehicles in Washington State collected by the DOL.We found this dataset, [Electric Vehicle Population Data](https://data.wa.gov/Transportation/Electric-Vehicle-Population-Data/f6w7-q2d2), in the U.S. Government's open data resource called Data.gov. 
+In order to answer these questions, we will be using data about electric vehicles in Washington State collected by the DOL.We found this dataset, [Electric Vehicle Population Data](https://data.wa.gov/Transportation/Electric-Vehicle-Population-Data/f6w7-q2d2), in the U.S. Government's open data resource called Data.gov.
 
 * **
 
