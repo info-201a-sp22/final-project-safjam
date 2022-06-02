@@ -2,7 +2,6 @@
 
 library("plotly")
 library("bslib")
-# thematic_shiny(font = "auto")
 
 # load data 
 ev_data <- read.csv("https://data.wa.gov/api/views/f6w7-q2d2/rows.csv?accessType=DOWNLOAD", stringsAsFactors = FALSE)
@@ -126,7 +125,6 @@ conclusion_tab <- tabPanel(
     includeMarkdown("conclusion.md"),
   )
 )
-
 
 # set up the navbar
 ui <- navbarPage(
