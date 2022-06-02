@@ -5,6 +5,9 @@ library(plotly)
 library(dplyr)
 library(bslib)
 library(markdown)
+library(thematic)
+thematic_shiny(font = "auto")
+
 
 
 source("server.R")
