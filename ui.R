@@ -111,7 +111,9 @@ top_vehicle_info <- tabPanel(
     popular_vehicles_panel
   ), 
   paste("Based on the top number of EV-dense counties you select, you will see the most popular electric vehicle models people own.",
-        "Since the green benefits of BEVs and PHEVs differ, you can also choose to see which car models are dominating for either vehicle type."
+        "Since the green benefits of BEVs and PHEVs differ, you can also choose to see which car models are dominating for either vehicle type.",
+        "Knowing the most popular vehicle models is important not only for the sake of car manufacturing and culture, but also,",
+        "because as consumers, we can encourage the competetitive industry to strive towards the most efficient and carbon-footprint reducing vehicles."
         )
 )
 
