@@ -16,9 +16,12 @@ server <- function(input, output) {
   output$electric_range_plot <- renderPlotly({
     
     er_filtered <- ev_data %>%
-      filter(Make %in% input$make_selection)
+      filter(Make %in% input$make_selection) %>%
+      group_by(Model.Year) %>%
+      filter(Electric.Range == max(Electric.Range)) %>%
+      mutate(Vehicle = paste(Make, Model))
     
-    ev_plot <- ggplot(data = er_filtered, aes(color = Make)) +
+    ev_plot <- ggplot(data = er_filtered, aes(color = Vehicle)) +
       geom_point(mapping = aes(group = 1, 
                                x = Model.Year, 
                                y = Electric.Range)) + 

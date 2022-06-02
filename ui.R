@@ -85,7 +85,7 @@ sidebar_panel <- sidebarPanel(
 
 # combine into a tab
 electric_range_tab <- tabPanel(
-  "Electric Vehicle Efficiency",
+  "Efficiency of Makes",
   sidebarLayout(
     electric_range_panel,
     er_main_panel_plot,
