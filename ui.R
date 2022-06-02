@@ -7,13 +7,13 @@ library("bslib")
 ev_data <- read.csv("https://data.wa.gov/api/views/f6w7-q2d2/rows.csv?accessType=DOWNLOAD", stringsAsFactors = FALSE)
 
 # set a theme base
-my_theme <- bs_theme(bg = "#0b3d91",
+my_theme <- bs_theme(bg = "#F58686",
                      fg = "white", 
-                     primary = "#FCC780",
+                     primary = "#F58686",
 ) 
 
 # update BootSwatch Theme
-my_theme <- bs_theme_update(my_theme, bootswatch = "solar") %>% 
+my_theme <- bs_theme_update(my_theme, bootswatch = "flatly") %>% 
   bs_add_rules(sass::sass_file("my_style.scss"))
 
 # home page tab
@@ -33,15 +33,16 @@ main_panel_plot <- mainPanel(
 electric_range_panel <- sidebarPanel(
   # select the make type option
   selectInput(
-    inputId = "make_choice",
-    label = "Make",
+    inputId = "make_selection",
+    label = "Makes of Vehicles",
     choices = unique(ev_data$Make),
-    multiple = TRUE
+    multiple = TRUE,
+    selected = "TESLA"
   )
 )
 
 # electric range plot
-electric_range_panel_plot <- mainPanel(
+er_main_panel_plot <- mainPanel(
   plotlyOutput(outputId = "electric_range_plot")
 )
 
@@ -63,8 +64,8 @@ sidebar_panel <- sidebarPanel(
 electric_range_tab <- tabPanel(
   "Electric Vehicle Efficiency",
   sidebarLayout(
-    electric_range_panel_plot,
-    electric_range_panel
+    electric_range_panel,
+    er_main_panel_plot,
   ),
   fluidPage(
     includeMarkdown("electric_range.md"),
