@@ -90,8 +90,9 @@ electric_range_tab <- tabPanel(
     electric_range_panel,
     er_main_panel_plot,
   ),
+  br(),
   p("This dot plot maps out",
-    span("electric range (amount of miles a vehicle can travel purely on electric charge)", style = "color:blue"),
+    span("electric range (amount of miles a vehicle can travel purely on electric charge)", style = "color:green"),
     "of electric vehicles from 1993-2022, organized by different makes to observe efficiency!"),
   p("The scatterplot is also organized by vehicle models, allowing observations of specific models by makers.")
 )
