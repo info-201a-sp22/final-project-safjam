@@ -25,9 +25,9 @@ server <- function(input, output) {
       geom_point(mapping = aes(group = 1, 
                                x = Model.Year, 
                                y = Electric.Range)) + 
-      labs(x = "Model Year",
+      labs(x = "Model Year of Vehicle",
            y = "Electric Range") +
-      ggtitle(paste("Electric Ranges of Makes Throughout Model Years"))
+      ggtitle(paste("Electric Ranges of Vehicles Throughout The Years"))
     
     return(ggplotly(ev_plot))
   })
