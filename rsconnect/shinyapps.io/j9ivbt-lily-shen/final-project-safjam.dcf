@@ -5,9 +5,9 @@ account: j9ivbt-lily-shen
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 6415093
-bundleId: 5970870
+bundleId: 5972593
 url: https://j9ivbt-lily-shen.shinyapps.io/final-project-safjam/
-when: 1654159144.19884
-lastSyncTime: 1654159144.19884
+when: 1654198490.32865
+lastSyncTime: 1654198490.32865
 asMultiple: FALSE
 asStatic: FALSE
