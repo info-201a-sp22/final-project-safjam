@@ -37,14 +37,13 @@ server <- function(input, output) {
     # create bar plot
     cafv_bar_chart <- ggplot(data = cities_and_cafv) +
       geom_col(mapping = aes(x = City, y = total_vehicles,
-                            fill = Clean.Alternative.Fuel.Vehicle..CAFV..Eligibility), 
-                            position = "fill",
-                            label = paste("City:", City,
-                                         "Total Vehicles:", sum_groups$summed_vehicles)) +
+                             fill = Clean.Alternative.Fuel.Vehicle..CAFV..Eligibility.y,
+                             text = paste("Percent of Vehicles:", summed_vehicles)),
+               position = "fill")+
       scale_x_discrete(guide = guide_axis(n.dodge=3)) +
       labs(title = 'Percentage of Vehicles That Are Either Eligible for Clean Alternative Fuels or Not in 10 Washington Cities', x = "Cities", y = 'Percent of Vehicles')
     
-    return(ggplotly(cafv_bar_chart, tooltip = c("label")))
+    return(ggplotly(cafv_bar_chart, tooltip = c("text")))
     
   })
   
