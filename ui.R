@@ -31,6 +31,15 @@ main_panel_bar_plot <- mainPanel(
   plotlyOutput("cafv_chart")
 )
 
+# cafv page widgets
+sidebar_panel_bar_plot <- sidebarPanel(
+  selectInput(inputId = "city", 
+              label = "Choose a City", 
+              choices = unique(ev_data$City),
+              multiple = TRUE,
+              selected = "RENTON")
+)
+
 # vehicle popularity 
 popular_vehicles <- mainPanel(
   plotOutput(outputId = "popular_vehicles_plot")
@@ -101,7 +110,7 @@ CAFV_info <- tabPanel(
   "CAVF variation",
   sidebarLayout(
     main_panel_bar_plot,
-    sidebar_panel
+    sidebar_panel_bar_plot
   )
 )
 
