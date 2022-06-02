@@ -26,7 +26,6 @@ intro_tab <- tabPanel(
   )
 )
 
-
 # cafv bar plot on main page
 main_panel_bar_plot <- mainPanel(
   plotlyOutput("cafv_chart")
@@ -78,19 +77,6 @@ er_main_panel_plot <- mainPanel(
   plotlyOutput(outputId = "electric_range_plot")
 )
 
-# sidebar panel for installing the widget
-sidebar_panel <- sidebarPanel(
-  # select an emissions type option
-  radioButtons(inputId = "choose_emission_type",
-               label = "Select An Emissions Source",
-               choices = list("Cement" = "share_global_cement_co2",
-                              "Coal" = "share_global_coal_co2",
-                              "Flaring" = "share_global_flaring_co2",
-                              "Gas" = "share_global_gas_co2",
-                              "Oil" = "share_global_oil_co2"),
-               selected = "share_global_cement_co2"
-  )
-)
 
 # combine into a tab
 electric_range_tab <- tabPanel(
