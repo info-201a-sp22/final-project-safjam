@@ -58,14 +58,6 @@ electric_range_panel <- sidebarPanel(
     choices = unique(ev_data$Make),
     multiple = TRUE,
     selected = "TESLA"
-  ),
-  sliderInput(
-    inputId = "year_input",
-    label = "Model Year",
-    min = min(ev_data$Model.Year),
-    max = max(ev_data$Model.Year),
-    value = c(min(ev_data$Model.Year), max(ev_data$Model.Year)),
-    sep = ""
   )
 )
 
