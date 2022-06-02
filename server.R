@@ -51,7 +51,7 @@ server <- function(input, output) {
            x = "Cities",
            y = 'Percent of Vehicles',
            fill = "CAFV Eligibility")
-    gg_chart <- ggplotly(cafv_bar_chart, tooltip = c("text"), width = 600, height = 300)
+    gg_chart <- ggplotly(cafv_bar_chart, tooltip = c("text"))
     return(gg_chart)
   })
   
