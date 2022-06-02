@@ -1,4 +1,4 @@
-# Conclusion
+## Conclusion
 
 The aim of the analysis was to answer three main questions:
 
