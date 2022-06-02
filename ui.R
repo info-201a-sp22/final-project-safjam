@@ -32,17 +32,17 @@ main_panel_plot <- mainPanel(
 
 # vehicle popularity 
 popular_vehicles <- mainPanel(
-  plotlyOutput(outputId = "popular_vehicles_plot")
+  plotOutput(outputId = "popular_vehicles_plot")
 )
 
 # vehicle popularity widgets
 popular_vehicles_panel <- sidebarPanel(
   # select cities
   sliderInput(inputId = "county_popularity_slider", 
-              label = "Top Counties in Order of Vehicle Density", 
+              label = "Top 80 Counties by Electric Vehicle Density", 
               min = 1, 
-              max = 163, 
-              value = 10),
+              max = 80, 
+              value = 15),
   # select vehicle type
   checkboxGroupInput(inputId = "vehicle_type_checkbox",
                label = "Vehicle Type",
@@ -105,10 +105,14 @@ CAFV_info <- tabPanel(
 # combine into a tab
 top_vehicle_info <- tabPanel(
   "Vehicle Dominance",
+  h2("Dominating Vehicles in Top n Washington Counties"),
   sidebarLayout(
     popular_vehicles,
     popular_vehicles_panel
-  )
+  ), 
+  paste("Based on the top number of EV-dense counties you select, you will see the most popular electric vehicle models people own.",
+        "Since the green benefits of BEVs and PHEVs differ, you can also choose to see which car models are dominating for either vehicle type."
+        )
 )
 
 # conclusion tab

@@ -6,9 +6,14 @@ library(dplyr)
 library(bslib)
 library(markdown)
 library(tidyverse)
+library(RColorBrewer)
 
 # load data
 ev_data <- read.csv("https://data.wa.gov/api/views/f6w7-q2d2/rows.csv", stringsAsFactors = FALSE)
+
+# expand ggplot color palette capacity: credit to (https://www.r-bloggers.com/2013/09/how-to-expand-color-palette-with-ggplot-and-rcolorbrewer/)
+colourCount = length(unique(mtcars$hp))
+getPalette = colorRampPalette(brewer.pal(9, "Set1"))
 
 server <- function(input, output) { 
   
@@ -31,7 +36,7 @@ server <- function(input, output) {
 
   
   # vehicle dominance chart
-  output$popular_vehicles_plot <- renderPlotly({
+  output$popular_vehicles_plot <- renderPlot({
     
     # filter type of vehicle: BEV/PHEV/Both
     if(input$vehicle_type_checkbox == 1) {
@@ -55,11 +60,16 @@ server <- function(input, output) {
       arrange(-Count)
     
     widgeted_data <- head(county_ev_density, input$county_popularity_slider) %>% 
-      select(Vehicle, Count)
+      group_by(Vehicle) %>% 
+      summarize(Sums = sum(Count))
     
-    dominance_pie_chart <- ggplot(widgeted_data, aes(x = factor(1), y = Count, fill = Vehicle)) + 
-      geom_bar(stat = 'identity', width = 1) +
-      coord_polar(theta = "y")
+    # make the pie chart
+    dominance_pie_chart <- ggplot(widgeted_data, aes(x = '', y = Sums, fill = Vehicle)) + 
+      geom_bar(stat = 'identity', color = 'white') +
+      coord_polar(theta = "y") +
+      theme_void() + 
+      labs(fill = 'Vehicle Models') +
+      scale_fill_manual(values = getPalette(colourCount))
     
     return(dominance_pie_chart)
   })
