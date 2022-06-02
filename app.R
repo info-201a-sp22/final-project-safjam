@@ -1,8 +1,11 @@
 # Final Project
+library(shiny) 
+library(ggplot2)
+library(plotly)
+library(dplyr)
+library(bslib)
+library(markdown)
 
-library("shiny")
-library("rsconnect")
-library("markdown")
 
 source("server.R")
 source("ui.R")

@@ -31,16 +31,18 @@ main_panel_plot <- mainPanel(
 
 # electric range widget
 electric_range_panel <- sidebarPanel(
+  # select the make type option
   selectInput(
     inputId = "make_choice",
     label = "Make",
-    choices = unique(ev_data$Make)
+    choices = unique(ev_data$Make),
+    multiple = TRUE
   )
 )
 
 # electric range plot
 electric_range_panel_plot <- mainPanel(
-  plotlyOutput("electric_range_plot")
+  plotlyOutput(outputId = "electric_range_plot")
 )
 
 # sidebar panel for installing the widget
@@ -63,6 +65,9 @@ electric_range_tab <- tabPanel(
   sidebarLayout(
     electric_range_panel_plot,
     electric_range_panel
+  ),
+  fluidPage(
+    includeMarkdown("electric_range.md"),
   )
 )
 
