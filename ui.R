@@ -2,6 +2,7 @@
 
 library("plotly")
 library("bslib")
+thematic_shiny(font = "auto")
 
 # load data 
 ev_data <- read.csv("https://data.wa.gov/api/views/f6w7-q2d2/rows.csv?accessType=DOWNLOAD", stringsAsFactors = FALSE)
@@ -87,9 +88,9 @@ electric_range_tab <- tabPanel(
     electric_range_panel,
     er_main_panel_plot,
   ),
-  fluidPage(
-    includeMarkdown("electric_range.md"),
-  )
+  p("This dot plot maps out",
+    span("electric range (how far a vehicle can travel purely on electric charge)", style = "color:blue"),
+    "of electric vehicles from 1993-2022, organized by different makes to observe efficiency!")
 )
 
 # combine into a tab
