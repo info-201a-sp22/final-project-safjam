@@ -89,7 +89,8 @@ electric_range_tab <- tabPanel(
   p("This dot plot maps out",
     span("electric range (amount of miles a vehicle can travel purely on electric charge)", style = "color:green"),
     "of electric vehicles from 1993-2022, organized by different makes to observe efficiency."),
-  p("The scatterplot is also organized by vehicle models, allowing observations of specific models by makers and for consumers and makers to view model efficiency of different makes.")
+  p("The scatterplot is also organized by vehicle models, allowing observations of specific models by makers and for consumers and makers to view model efficiency of different makes."),
+  p("By comparing electric ranges to model year, it allows us to directly view how newer models compare to older ones when it comes to efficiency, and tests the logic behind the phrase, newer is better.")
 )
 
 # combine into a tab
