@@ -27,7 +27,7 @@ The role of vehicles and fuel emissions in climate change has been gaining incre
 
 * **How does the amount of electric vehicles with CAFV vary based on the city?**
 
-* **How does the number of vehicles fluctuate per region?**
+* **HWhat are the dominating vehicle models throughout Washington state?**
 
 We ask such questions because as technology advances and engineers develop more electric vehicles to reduce the amount of carbon dioxide emissions, it’s important to remember that these vehicles still require lots of other energy to function, if not gasoline. Thus, with this project, we will be identifying and collecting data to demonstrate whether electric vehicles are a benefit or harm to the state of Washington.
 
