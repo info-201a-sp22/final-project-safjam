@@ -8,6 +8,7 @@ Authors:
 * Lily Shen - lilyshen@uw.edu
 
 Shiny App: https://j9ivbt-lily-shen.shinyapps.io/final-project-safjam/
+Exploratory Analysis: https://info-201a-sp22.github.io/exploratory-analysis-ebant/
 
 # Introduction
 
